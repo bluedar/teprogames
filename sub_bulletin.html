@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/basic.css" />
+    <script src="js/prefixfree.min.js"></script>
+    <script defer type="module" src="js/json.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/sub_bulletin.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a07112805f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="header_wrap">
+        <nav>
+          <ul class="nav">
+            <li class="menu">
+              <a href="index.html">
+                <img src="img/logo/test_project_fff_logo.png" alt="로고" />
+                Games
+              </a>
+            </li>
+            <li class="menu"><a href="index.html">게임</a></li>
+            <li class="menu"><a href="./sub_bulletin.html">게시판</a></li>
+            <li class="menu"><a href="#">공지사항</a></li>
+          </ul>
+        </nav>
+        <div class="user_item">
+          <div class="search_wrap">
+            <input type="search" id="" />
+          </div>
+          <div class="login_wrap">
+            <a href="#">
+              <div class="login"></div>
+            </a>
+          </div>
+          <div class="hamburg_btn">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="bullentin_main">
+      <div class="main_wrap">
+        <div class="bullentin_munu">
+          <div class="select_wrap">
+            <div class="select">
+              <ul>
+                <li class="none">
+                  <figure>
+                    <img
+                      src="img/D.B.O.F.png"
+                      data-src="img/D.B.O.F.png"
+                      alt=""
+                    />
+                  </figure>
+                  <div>
+                    <h3>Deep Blue Ocean Fear</h3>
+                    <span>text</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="select_items"></ul>
+          </div>
+        </div>
+        <div class="bullentin_area">
+          <div class="bullentin_title">
+            <input type="text" id="title_input" />
+          </div>
+          <div class="bullentin_info">
+            <div contenteditable="true" class="textarea"></div>
+          </div>
+        </div>
+        <div class="go_btn">
+          <a href="./index.html"><button>전송</button></a>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <div class="dark"></div>
+      <div class="aside_wrap">
+        <div class="search_wrap">
+          <input type="search" id="" />
+        </div>
+        <div class="nav_wrap">
+          <ul class="nav">
+            <li class="menu"><a href="#">게임</a></li>
+            <li class="menu"><a href="#">게시판</a></li>
+            <li class="menu"><a href="#">공지사항</a></li>
+          </ul>
+        </div>
+        <div class="login_wrap">
+          <a href="#">
+            <div class="login">로그인</div>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <footer></footer>
+  </body>
+</html>

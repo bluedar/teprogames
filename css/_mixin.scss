@@ -1,0 +1,173 @@
+// flex 에 text-align:center
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+}
+
+//wrap!!
+@mixin wrap-content($width: 1220px, $padding: 0 50px, $padding-m: 0 20px) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: $padding;
+  @media #{$mobile} {
+    padding: $padding-m;
+  }
+}
+
+// 크기 확인용 보더
+@mixin test-border() {
+  //border: 1px solid black;
+}
+
+@mixin ham-btn() {
+  content: "";
+  width: 38px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+//그리드
+@mixin main-grid() {
+  column-gap: 32px;
+  @media #{$pc} {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+// 컴포넌트
+@mixin component($header-color: $main-color) {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #ccc;
+
+  h1 {
+    text-align: center;
+    background: $header-color;
+    border-radius: 10px 10px 0 0;
+    line-height: 32px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+  }
+}
+@mixin component2($header-color: $main-color, $item-color: cyan) {
+  @include component($header-color);
+  margin-top: 50px;
+  ul {
+    padding-bottom: 10px;
+
+    li {
+      a {
+        border-radius: 10px;
+        padding: 10px;
+        padding-left: 20px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+
+        &:hover {
+          box-shadow: 2px 2px 2px 2px $garyc;
+          background: $item-color;
+
+          img {
+            transform: scale(1.1);
+            box-shadow: 0 0 2px 3px #fff;
+          }
+        }
+
+        & > * {
+          margin-right: 10px;
+        }
+
+        > span {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 10px;
+          transition: 0.3s;
+        }
+
+        div {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@mixin component3($header-color: $main-color, $item-color: cyan) {
+  @include component($header-color);
+  margin-top: 50px;
+
+  ul {
+    padding-bottom: 20px;
+
+    li {
+      border-bottom: 1px solid $garyc;
+
+      &:hover {
+        background: $choice2;
+
+        img {
+          transform: scale(1.2);
+        }
+
+        .best_board_item {
+          margin-left: 10px;
+
+          h2 {
+            font-size: 18px;
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        padding: 20px;
+
+        img {
+          width: 38px;
+          height: 38px;
+          border-radius: 5px;
+          margin-right: 10px;
+          transition: 0.3s;
+        }
+
+        .best_board_item {
+          transition: 0.3s;
+
+          h2 {
+            transition: 0.3s;
+          }
+
+          p {
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//폰트 모음
+// 오뮤 다 이쁨체
+@mixin cute-font($font-size: 16px, $font-weight: nomal) {
+  font-family: "omyu_pretty", sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin sweet-font($font-size: 16px, $font-weight: nomal) {
+  font-family: "SUITE-Regular", sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}

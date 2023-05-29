@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "src": "img/D.B.O.F_big.png",
+      "data-src": "img/D.B.O.F.png",
+      "alt": "D.B.O.F",
+      "title": "Deep Blue Ocean Fear",
+      "categori": "어드벤쳐"
+    },
+    {
+      "id": 1,
+      "src": "img/json_img/game_big1.png",
+      "data-src": "img/json_img/game_mini1.png",
+      "alt": "브라운 더스트2",
+      "title": "브라운 더스트2",
+      "categori": "RPG"
+    },
+    {
+      "id": 2,
+      "src": "img/json_img/game_big2.png",
+      "data-src": "img/json_img/game_mini2.png",
+      "alt": "배틀 스트리머즈",
+      "title": "배틀 스트리머즈",
+      "categori": "캐쥬얼"
+    },
+    {
+      "id": 3,
+      "src": "img/json_img/game_big3.png",
+      "data-src": "img/json_img/game_mini3.png",
+      "alt": "이세계 좀비 헌터",
+      "title": "이세계 좀비 헌터",
+      "categori": "RPG"
+    },
+    {
+      "id": 4,
+      "src": "img/json_img/game_big4.png",
+      "data-src": "img/json_img/game_mini4.png",
+      "alt": "전설의 검",
+      "title": "전설의 검",
+      "categori": "어드벤쳐"
+    },
+    {
+      "id": 5,
+      "src": "img/json_img/game_big5.png",
+      "data-src": "img/json_img/game_mini5.png",
+      "alt": "클로저스RT:뉴 오더",
+      "title": "클로저스RT:뉴 오더",
+      "categori": "RPG"
+    },
+    {
+      "id": 6,
+      "src": "img/json_img/game_big6.png",
+      "data-src": "img/json_img/game_mini6.png",
+      "alt": "무림소녀 키우기",
+      "title": "무림소녀 키우기",
+      "categori": "캐쥬얼"
+    },
+    {
+      "id": 7,
+      "src": "img/json_img/game_big7.png",
+      "data-src": "img/json_img/game_mini7.png",
+      "alt": "슈퍼 캣 키우기",
+      "title": "슈퍼 캣 키우기",
+      "categori": "캐쥬얼"
+    },
+    {
+      "id": 8,
+      "src": "img/json_img/game_big8.png",
+      "data-src": "img/json_img/game_mini8.png",
+      "alt": "신과 함께",
+      "title": "신과 함께",
+      "categori": "RPG"
+    },
+    {
+      "id": 9,
+      "src": "img/json_img/game_big9.png",
+      "data-src": "img/json_img/game_mini9.png",
+      "alt": "스노우 브레이크: 포비든 존",
+      "title": "스노우 브레이크: 포비든 존",
+      "categori": "RPG"
+    },
+    {
+      "id": 10,
+      "src": "img/json_img/game_big10.png",
+      "data-src": "img/json_img/game_mini10.png",
+      "alt": "유그드라 리버스",
+      "title": "유그드라 리버스",
+      "categori": "RPG"
+    },
+    {
+      "id": 11,
+      "src": "img/json_img/game_big11.png",
+      "data-src": "img/json_img/game_mini11.png",
+      "alt": "무명 기사단",
+      "title": "무명 기사단",
+      "categori": "RPG"
+    }
+  ]
+}

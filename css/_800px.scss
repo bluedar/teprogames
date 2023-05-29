@@ -1,0 +1,148 @@
+@media (max-width: 800px) {
+  header {
+    //헤더랩! 실제 사용영역!
+    .header_wrap {
+      // 네브바 ul.nav
+      .nav {
+        //네브 아이템 li.menu
+        .menu {
+          display: none;
+          &:first-child {
+            display: block;
+          }
+        }
+      }
+      // 사용자 아이템 (검색창, 로그인버튼)
+      .user_item {
+        // 검색창랩
+        .search_wrap {
+          display: none;
+        }
+        // 로그인 버튼 랩
+        .login_wrap {
+          display: none;
+        }
+        .hamburg_btn {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+          span {
+            transition: 0.3s;
+            width: 38px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            position: relative;
+            &:after {
+              @include ham-btn;
+              top: -10px;
+            }
+            &:before {
+              @include ham-btn;
+              bottom: -10px;
+            }
+          }
+          &.on {
+            span {
+              background: transparent;
+              &:after {
+                top: 0px;
+                transform: rotate(45deg);
+              }
+              &:before {
+                bottom: 0px;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  aside {
+    display: block;
+    position: fixed;
+    top: 0;
+    transition: 0.3s;
+    .dark {
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      transition: 0.3s;
+      display: none;
+    }
+    .aside_wrap {
+      margin-right: -100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #fff;
+      width: 100vw;
+      max-width: 300px;
+      height: 100vh;
+      transition: 0.3s;
+      // 검색창
+      .search_wrap {
+        padding: 10px;
+        margin-top: 80px;
+        // 검색 인풋
+        input {
+          width: 270px;
+          height: 40px;
+          border-radius: 10px;
+          text-indent: 20px;
+          font-size: 20px;
+          @include sweet-font;
+          letter-spacing: 2px;
+          border: 1px solid #fff;
+          background: #e4f4ff;
+
+          &:focus {
+            outline: 0;
+            background: cyan;
+          }
+        }
+      }
+      .nav_wrap {
+        margin-top: 10px;
+        ul {
+          li {
+            a {
+              display: block;
+              height: 60px;
+              line-height: 60px;
+              border-bottom: 1px solid #ccc;
+              padding-left: 10px;
+              @include sweet-font(20px, bold);
+            }
+          }
+        }
+      }
+      .login_wrap {
+        height: 60px;
+        background: #ccc;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        padding: 10px;
+        a {
+          .login {
+          }
+        }
+      }
+    }
+    &.on {
+      opacity: 1;
+      .dark {
+        display: block;
+      }
+      .aside_wrap {
+        margin-right: 0%;
+      }
+    }
+  }
+}

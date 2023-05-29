@@ -1,0 +1,432 @@
+body {
+  font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+  background: $bg-color1;
+}
+
+//헤더!!
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background: $main-color;
+  @include cute-font;
+  z-index: 100;
+
+  //헤더랩! 실제 사용영역!
+  .header_wrap {
+    @include wrap-content;
+    @include flex-center;
+    height: 60px;
+    justify-content: space-between;
+
+    @include test-border;
+
+    // 네브바 ul.nav
+    .nav {
+      display: flex;
+      align-items: center;
+      @include test-border;
+
+      //네브 아이템 li.menu
+      .menu {
+        padding: 0 10px;
+
+        font : {
+          size: 24px;
+          weight: bold;
+        }
+        //네브 아이템의 링크 a
+        a {
+          transition: 0.3s;
+          color: #fff;
+          // a hover시에 글자색 변화
+          &:hover {
+            color: $choice1;
+          }
+
+          //a속 로고 이미지
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+
+    // 사용자 아이템 (검색창, 로그인버튼)
+    .user_item {
+      @include flex-center;
+      column-gap: 10px;
+
+      @include test-border;
+
+      // 검색창랩
+      .search_wrap {
+        // 검색 인풋
+        input {
+          width: 300px;
+          height: 40px;
+          border-radius: 999px;
+          text-indent: 20px;
+          font-size: 20px;
+          @include sweet-font;
+          letter-spacing: 2px;
+          border: 1px solid #fff;
+          background: #fff;
+          @media #{$tablet} {
+            width: 230px;
+          }
+          &:focus {
+            outline: 0;
+            background: #e4f4ff;
+          }
+        }
+      }
+
+      // 로그인 버튼 랩
+      .login_wrap {
+        padding: 10px;
+
+        .login {
+          width: 100px;
+          height: 30px;
+          position: relative;
+          top: -5px;
+          transition: 0.3s;
+
+          background: {
+            image: url("../img/login.png");
+            repeat: no-repeat;
+            position: center center;
+            size: 100px;
+          }
+
+          &:hover {
+            background-image: url("../img/login_h.png");
+          }
+        }
+      }
+    }
+  }
+}
+
+//어사이드!!
+aside {
+  display: none;
+  z-index: 50;
+}
+
+//메인!!
+main {
+  margin-top: 100px;
+  //메인 컨텐츠!!
+  .main_wrap {
+    @include wrap-content;
+    .slider_content {
+      @include main-grid;
+      > div {
+        @include test-border();
+      }
+      .slider_main {
+        @include test-border;
+        position: relative;
+        .slider_wrap {
+          .slider {
+            position: relative;
+            .slider_item {
+              position: absolute;
+              opacity: 0;
+              transition: 0.3s;
+              &.on {
+                opacity: 1;
+              }
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .item_gost {
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .slider_btn_wrap {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 10fr 1fr;
+          @media #{$mobile-mini} {
+            grid-template-columns: 2fr 8fr 2fr;
+            bottom: -60px;
+          }
+          > div {
+            @include test-border;
+            background: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+
+            text-align: center;
+            line-height: 60px;
+            i {
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 30px;
+            }
+            &:hover {
+              i {
+                color: yellow;
+              }
+            }
+          }
+          .slider_btn {
+            @include test-border;
+            height: 60px;
+            width: 100%;
+            overflow: hidden;
+            ul {
+              width: 200%;
+              height: 100%;
+              display: flex;
+              transition: 0.3s;
+              li {
+                @include test-border;
+                flex: 1;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                  background: rgb(207, 207, 0);
+                }
+                position: relative;
+                &:after {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  display: block;
+                  content: "";
+                  width: 0;
+                  height: 5px;
+
+                  background: #fff;
+                }
+                &.on {
+                  background: rgb(207, 207, 0);
+                  &:after {
+                    width: 100%;
+                    transition: 2s;
+                  }
+                }
+              }
+            }
+            &.on {
+              ul {
+                margin-left: -100%;
+              }
+            }
+          }
+        }
+        @media #{$mobile-mini} {
+          margin-bottom: 110px;
+        }
+      }
+      .slider_aside {
+        div {
+          overflow: hidden;
+          img {
+            width: 100%;
+            transition: 0.3s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          &:first-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .main_content {
+      @include main-grid;
+      > div {
+        @include test-border();
+        min-height: 400px;
+      }
+      .main_main {
+        .bulletin {
+          @include component3;
+        }
+        .choice_bar {
+          height: 5vw;
+          max-height: 60px;
+          min-height: 40px;
+          width: 100%;
+          background: #fff;
+          margin-top: 50px;
+          ul {
+            display: flex;
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+
+            li {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-right: 1px solid cyan;
+              background: $main-color;
+              color: #fff;
+              @include sweet-font(20px, bold);
+              text-align: center;
+              @media #{$mobile} {
+                @include sweet-font(12px, bold);
+              }
+              &:last-child {
+                border: none;
+              }
+              &:hover {
+                background: $choice1;
+              }
+            }
+          }
+        }
+
+        .games {
+          @include component();
+          margin-top: 30px;
+          position: relative;
+          .games_wrap {
+            text-align: center;
+            padding-bottom: 40px;
+            .game_item_wrap {
+              padding: 10px;
+
+              .game_item {
+                position: relative;
+                display: inline-block;
+                max-width: 30%;
+                margin: 5px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                transition: 0.3s;
+                &:hover {
+                  box-shadow: 2px 2px 2px 2px $garyc;
+                  background: cyan;
+                  img {
+                    transform: scale(1.2);
+                  }
+                }
+                &:nth-child(n + 7) {
+                  display: none;
+                }
+                @media #{$mobile} {
+                  display: flex;
+                  max-width: 100%;
+                }
+                figure {
+                  border-radius: 10px;
+                  overflow: hidden;
+                  @media #{$mobile} {
+                    width: 100px;
+                  }
+                  img {
+                    width: 100%;
+                    transition: 0.3s;
+                    @media #{$mobile} {
+                      width: 120%;
+                    }
+                  }
+                }
+                div {
+                  @include test-border;
+                  position: absolute;
+                  top: 5px;
+                  left: 10px;
+                  margin: 10px;
+                  color: #fff;
+                  @media #{$mobile} {
+                    position: initial;
+                  }
+                  h3 {
+                    @include cute-font(20px);
+                    text-shadow: 0px 0px 2px #000;
+                  }
+                  span {
+                    @include cute-font(16px);
+                  }
+                }
+              }
+              &.on .game_item {
+                display: inline-block;
+                @media #{$mobile} {
+                  display: flex;
+                }
+              }
+            }
+          }
+          .plus_btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 999px;
+            background: #fff;
+            transition: 0.3s;
+            &:hover {
+              box-shadow: 0px 0px 3px 2px #fff;
+              background: yellow;
+            }
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            font-size: 70px;
+            color: $main-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .minus {
+              display: none;
+            }
+            &.on {
+              .plus {
+                display: none;
+              }
+              .minus {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      .main_aside {
+        .visit {
+          @include component2(violet, Lavender);
+        }
+        .popular {
+          @include component2();
+        }
+        .Notice {
+          @include component2(orange, yellow);
+          ul {
+            li {
+              a {
+                div {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 푸터!!
+
+footer {
+  height: 300px;
+  margin-top: 50px;
+  background: #ccc;
+}

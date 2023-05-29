@@ -1,0 +1,35 @@
+@media (max-width: 1078px) {
+  header {
+    //헤더랩! 실제 사용영역!
+    .header_wrap {
+      // 네브바 ul.nav
+      .nav {
+        //네브 아이템 li.menu
+        .menu {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .aside {
+    display: none;
+  }
+  main {
+    .main_wrap {
+      .slider_content {
+        .slider_main {
+          .slider_wrap {
+            .slider {
+              .slider_item {
+                width: 100%;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
