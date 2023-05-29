@@ -1,5 +1,8 @@
 export async function getJson() {
-  const response = await fetch("../json/main.json");
+  //const response = await fetch("../json/main.json");
+  const response = await fetch(
+    "https://bluedar.github.io/teprogames/json/main.json"
+  );
   const products = await response.json();
   return products;
 }
