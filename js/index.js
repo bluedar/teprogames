@@ -123,9 +123,9 @@ const make_visit_game = (game_item, innerUl) => {
   visitObj["item_img"] = item_img;
   visitObj["h3_text"] = h3_text;
   visitObj["span_text"] = span_text;
-  visitArray = [{ ...visitObj }, ...visitArray];
+  visitArray = [...visitArray, { ...visitObj }];
   if (visitArray.length > 5) {
-    visitArray.pop();
+    visitArray.shift();
   }
   const visitId = "saveList";
   saveList(visitId);
@@ -135,6 +135,7 @@ const saveList = (aa) => {
   localStorage.setItem(aa, JSON.stringify(visitArray));
 };
 
+//시작될때 로컬에서 데이터를 받아와 화면에 뿌려준다
 const make_start_visit_game = (game_item, innerUl) => {
   // 게임 아이템의 img src
   const item_img = game_item["item_img"];
@@ -241,7 +242,8 @@ const loadList = () => {
     const bulletin_item_wrap = document.querySelector(".bulletin ul");
     make_bulletin_item(item, bulletin_item_wrap);
   });
-
+};
+const loadList2 = () => {
   // 로컬에서 데이터를 받아 최신게임란에 출력
   const dataVisit = JSON.parse(localStorage.getItem("saveList"));
 
@@ -257,3 +259,4 @@ const loadList = () => {
 };
 
 loadList();
+loadList2();

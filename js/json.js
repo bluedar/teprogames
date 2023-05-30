@@ -57,6 +57,9 @@ const make_start_game = (game_item, innerUl) => {
       <span>${span_text}</span>
     </div>`;
   create_li.classList.add("game_item");
+  create_li.addEventListener("click", () => {
+    make_visit_game(game_item, innerUl);
+  });
   // ul에 생성한 li를 집어 넣는다.
   innerUl.append(create_li);
 };
