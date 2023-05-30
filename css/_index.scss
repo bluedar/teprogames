@@ -311,6 +311,7 @@ main {
                 border: 1px solid #ddd;
                 border-radius: 10px;
                 transition: 0.3s;
+                cursor: pointer;
                 &:hover {
                   box-shadow: 2px 2px 2px 2px $garyc;
                   background: cyan;

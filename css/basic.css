@@ -376,6 +376,7 @@ main .main_wrap .main_content .main_main .games .games_wrap .game_item_wrap .gam
   border: 1px solid #ddd;
   border-radius: 10px;
   transition: 0.3s;
+  cursor: pointer;
 }
 main .main_wrap .main_content .main_main .games .games_wrap .game_item_wrap .game_item:hover {
   box-shadow: 2px 2px 2px 2px #ccc;
