@@ -157,7 +157,7 @@ const make_start_visit_game = (game_item, innerUl) => {
     </div>
   </a>`;
   create_li.addEventListener("click", () => {
-    make_visit_game(game_item, innerUl);
+    make_start_visit_game(game_item, innerUl);
   });
   // ul에 생성한 li를 집어 넣는다.
   innerUl.prepend(create_li);
